@@ -1,0 +1,132 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.game-board {
+    position: relative;
+    width: 80vw;
+    max-width: 981px;
+    height: 500px;
+    margin: 0 auto;
+    border: 5px inset #5081af;
+    background-image: linear-gradient(#26639820, #8fb0ca20);
+    overflow: hidden;
+}
+
+.pontuacao {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    color: #29435b;
+    font-family: monospace;
+    text-shadow: 1px 1px 0 #d3d3d3, 1px -1px 0 #d3d3d3, -1px 1px 0 #d3d3d3, -1px -1px 0 #d3d3d3, 1px 0px 0 #d3d3d3, 0px 1px 0 #d3d3d3, -1px 0px 0 #d3d3d3, 0px -1px 0 #d3d3d3, 0px 1px 3px #d3d3d3;
+}
+
+.pinguim {
+    position: absolute;
+    bottom: 40px;
+    height: 90px;
+    margin-left: 50px;
+    z-index: 5;
+}
+
+.obstaculo {
+    position: absolute;
+    bottom: 40px;
+    height: 80px;
+    animation: animacao-obstaculo 1.5s infinite linear;
+}
+
+.chao {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    box-shadow: 1px -7.5px 22px 3px #35567954;
+}
+
+.cenario {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    animation: animacao-cenario 30s infinite linear;
+}
+
+.cenario img { 
+    height: 100%;
+}
+
+.btn-restart {
+    position: absolute;
+    top: calc(50% - 37.5px);
+    left: calc(50% - 123px);
+    color: #29435b;
+    font-size: 2rem;
+    font-family: monospace;
+    text-shadow: 3px 3px 0 #d3d3d3, 3px -3px 0 #d3d3d3, -3px 3px 0 #d3d3d3, -3px -3px 0 #d3d3d3, 3px 0px 0 #d3d3d3, 0px 3px 0 #d3d3d3, -3px 0px 0 #d3d3d3, 0px -3px 0 #d3d3d3, 0px 1px 3px #d3d3d3;
+    text-decoration: none;
+    visibility: hidden;
+}
+
+.pulo {
+    animation: animacao-pinguim 500ms ease-out;
+}
+
+/* animações */
+@keyframes animacao-obstaculo {
+    from {
+        right: -10%;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes animacao-pinguim {
+    0% {
+        bottom: 50px;
+    }
+    40% {
+        bottom: 180px;
+    }
+    50% {
+        bottom: 180px;
+    }
+    60% {
+        bottom: 180px;
+    }
+    100% {
+        bottom: 50px;
+    }
+}
+
+@keyframes animacao-morte {
+    20% {
+        bottom: 130px;
+    }
+    100% {
+        bottom: -200px;
+        opacity: .8;
+    }
+}
+
+@keyframes animacao-cenario {
+    from {
+        right: 0%;
+    }
+    to {
+        right: 105%;
+    }
+}
