@@ -64,3 +64,8 @@ const loop = setInterval(() => {
     }
 }, 10);
 document.addEventListener("keydown", pulo);
+
+// recarrega a página para reiniciar o jogo
+function recarregaPagina() {
+    window.location.reload();
+}
